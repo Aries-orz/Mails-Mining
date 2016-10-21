@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Aries</title>
+
+<link href="style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.SuperSlide.js"></script>
+
+<!--<style>
+@media screen and (min-width:1800px) {
+	img{width:1700px;}
+}
+
+@media screen and (min-height: 769px) {
+	img{height:850px;}
+}
+
+@media screen and (max-width:1367px) {
+	img{width:1200px;}
+}
+
+@media screen and (max-height: 769px) {
+	img{height:600px;}
+}
+</style>-->
+
+</head>
+
+<body>
+
+<div class="index_focus">
+
+	<a href="javascript:;" class="index_focus_pre" title="上一张">上一张</a>
+	<a href="javascript:;" class="index_focus_next" title="下一张">下一张</a>
+	
+	<div class="bd">
+		<ul>
+			<li>
+					<img class="pic" src="1999f.png" width="1700px" height="850px" alt="">
+			</li>
+			<li>
+					<img class="pic" src="2000f.png" width="1700px" height="850px" alt="">
+			</li>
+			<li>
+					<img class="pic" src="2001f.png" width="1700px" height="850px" alt="">
+			</li>
+			<li>
+					<img class="pic" src="2002f.png" width="1700px" height="850px" alt="">
+			</li>
+			<li>
+					<img class="pic" src="2003f.png" width="1700px" height="850px" alt="">
+			</li>
+			<li>
+					<img class="pic" src="2004f.png" width="1700px" height="850px" alt="">
+			</li>
+			<li>
+					<img class="pic" src="2005f.png" width="1700px" height="850px" alt="">
+			</li>
+			<li>
+					<img class="pic" src="2006f.png" width="1700px" height="850px" alt="">
+			</li>
+		</ul>
+	</div>
+	
+	<div class="slide_nav">
+		<a href="javascript:;">●</a>
+		<a href="javascript:;">●</a>
+		<a href="javascript:;">●</a>
+		<a href="javascript:;">●</a>
+		<a href="javascript:;">●</a>
+		<a href="javascript:;">●</a>
+		<a href="javascript:;">●</a>
+		<a href="javascript:;">●</a>
+	</div>
+	
+</div>
+ 
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$(".index_focus").hover(function(){
+		$(this).find(".index_focus_pre,.index_focus_next").stop(true, true).fadeTo("show", 1)
+	},function(){
+		$(this).find(".index_focus_pre,.index_focus_next").fadeOut()
+	});
+	
+	$(".index_focus").slide({
+		titCell: ".slide_nav a ",
+		mainCell: ".bd ul",
+		delayTime: 500,
+		interTime: 3500,
+		prevCell:".index_focus_pre",
+		nextCell:".index_focus_next",
+		effect: "fold",
+		autoPlay: false,
+		trigger: "click",
+		startFun:function(i){
+			$(".index_focus_info").eq(i).find("h3").css("display","block").fadeTo(1000,1);
+			$(".index_focus_info").eq(i).find(".text").css("display","block").fadeTo(1000,1);
+		}
+	});
+
+});
+</script>
+
+</body>
+</html>
